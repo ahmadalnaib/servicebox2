@@ -22,6 +22,66 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./servicebox-3.css" />
     <title>d-3</title>
+  <style>
+     .animation-video {
+    width: 100%;
+}
+ video {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    max-height: 1200px;
+}
+
+ .heading {
+    max-width: 80rem;
+    margin: 0 auto;
+    z-index: 1;
+  display: none;
+}
+
+ .section_container {
+    position: absolute;
+}
+.section_container {
+    width: 100%;
+    max-width: 1600px;
+    padding-left: var(--space-9);
+    padding-right: var(--space-9);
+    margin: 0 auto;
+}
+
+#hero {
+  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    
+}
+ #hero.end::before {
+    opacity: 1;
+   
+}
+
+ #hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at 29% 41%, #b0a9ef 0px, transparent 50%),radial-gradient(at 84% 2%, #d1f5e8 0px, transparent 50%),radial-gradient(at 44% 95%, #b3baff 0px, transparent 50%),radial-gradient(at 100% 92%, #99adff 0px, transparent 50%),radial-gradient(at 0% 100%, #dbdbdb 0px, transparent 50%),radial-gradient(at 60% 24%, #b8ffd4 0px, transparent 50%);
+    opacity: 0;
+    transition: 1s ease opacity;
+    background-size: 220%;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+  </style>
   </head>
   <body>
     <!-- Start the  Navbar -->
@@ -364,32 +424,64 @@
       </div>
     </header>
 
-    <section id="product_showcase " class="pt-5">
-      <div class="container">
-        <h2 class="fw-bold mb-4 display-3">Click & Collect Servicebox</h2>
-
-        <div class="border"></div>
-        <div class="d-flex justify-content-between mt-4">
-          <p class="lead">
-            Abholstation – Anlieferung und Abholung 24/7 <br />
-          </p>
-          <a href="#" class="btn btn-danger p-3"
-            >Order Now <i class="bi bi-arrow-right"></i
-          ></a>
+    <!-- showcase -->
+    <section id="hero" data-navposition="relative" class=" text-white mb-5">
+      <div class="section_container heading">
+        <div class="padding_0 padding_sm_9 txt_center">
+          <h3>
+            <span
+              class="txt_label white txt_caption txt_uppercase margin_bottom_5"
+              data-tr="jqfs"
+              >Locker</span
+            >
+          </h3>
+          <h1
+            class="display-1 fw-bold txt_caption txt_medium txt_uppercase txt_neutral_grayscale_100 margin_bottom_7"
+          >
+            <span
+              >Click & Collect Servicebox <br>
+              </span
+              >
+             
+            </h1>
+            <h2> <span class="txt_book" data-tr="gkwxyo"
+              >
+              Qualität made in Germany.</span
+            ></h2>
+            <h2
+            class="txt_headline txt_medium txt_neutral_grayscale_100 margin_bottom_9"
+            data-tr="bospma"
+          >
+          Abholstation – Anlieferung und Abholung 24/7
+          </h2>
+          <aside class="w-75 mx-auto mt-4">
+            <h3
+              class="txt_body txt_neutral_grayscale_100 margin_bottom_9"
+              data-tr="aoumjgcome "
+            >
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, minima.<br>
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, repudiandae.
+            </h3>
+          </aside>
+          <a
+            href="#subscribe"
+            class="btn_secondary_neutral btn btn-outline-light py-3 px-5 mt-4 fw-bold fs-3"
+            data-event-action="click-hero-kmi"
+            data-event-label="Body Comp"
+            data-scroll-target="#subscribe"
+            data-tr="nwxpfdihck"
+            >Order Now</a
+          >
         </div>
       </div>
-    </section>
-          
-    <!-- video -->
-    <section id="product_video" class="real-m col-md-12">
-      <div class="pro-video">
-        <video muted autoplay loop poster="./products/main.png" class="video">
+      
+      <div class="animation-video">
+        <video muted autoplay   class="video" preload="metadata"   >
           <source src="./products/main.mp4" type="video/mp4" />
         </video>
       </div>
     </section>
-
-    <!-- talk -->
+    <!-- showcase application -->
 
     <section id="product_shortcut" class="real-m">
       <div class="container text-center">
@@ -1298,6 +1390,7 @@
   </div>
 
 </div>
+    <!-- end showcase -->
 
     <!-- footer -->
     <section id="footer" class="bg-secondary-main">
@@ -1511,6 +1604,16 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
       })();
+           
+  const heading=document.querySelector('.heading')
+  const hero=document.querySelector('#hero')
+ 
+      setTimeout(() => {
+        hero.classList.add('end')
+        heading.style.display = "block";
+   
+
+ }, 7000);
     </script>
 
     <script src="jquery.js"></script>
